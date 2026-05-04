@@ -1,0 +1,1319 @@
+/* ============================================================
+   Aktaş & Karaca Hukuk Bürosu — styles.css  (v2)
+   Tasarım: Koyu-lüks minimal. Cinzel + Cormorant + Inter.
+   ============================================================ */
+
+/* ── CSS Variables ────────────────────────────────────────── */
+:root {
+  /* Zemin renkleri — kartvizitle uyumlu sıcak koyu */
+  --ink:         #1a1714;      /* espresso siyah — navy değil, kartvizit metniyle uyumlu */
+  --ink-2:       #231f1b;
+  --ink-3:       #2e2924;      /* kart arka planı (koyu bölüm) */
+
+  /* Açık zemin — kartvizit parşömen kremi */
+  --cream:       #ede9dc;      /* kartvizit zemin rengi — birebir */
+  --cream-2:     #e4ddd0;      /* alternatif açık zemin */
+  --white:       #f5f1e8;
+
+  /* Altın aksan — kartvizit çerçeve/süs rengi */
+  --gold:        #b8a87a;      /* mat bej-altın — kartvizit border tonu */
+  --gold-light:  #cbbf96;
+  --gold-dim:    rgba(184, 168, 122, 0.15);
+  --gold-border: rgba(184, 168, 122, 0.38);
+
+  /* Metin (açık zemin) */
+  --text:        #12151a;
+  --text-2:      #3a3f4b;
+  --text-3:      #6b7280;
+
+  /* Metin (koyu zemin) */
+  --text-light:  #e8e3da;
+  --text-light-2:#a8a29e;
+
+  /* Gölge */
+  --shadow-sm:   0 2px 12px rgba(7,9,13,0.07);
+  --shadow-md:   0 8px 32px rgba(7,9,13,0.12);
+  --shadow-lg:   0 20px 60px rgba(7,9,13,0.2);
+
+  /* Boyutlar */
+  --section-v:   7rem;
+  --radius:      4px;        /* ağırbaşlı → köşeler yuvarlak değil */
+  --radius-sm:   3px;
+  --navbar-h:    72px;
+  --transition:  0.3s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow: 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Koyu tema */
+body.dark {
+  --cream:       #1a1714;
+  --cream-2:     #231f1b;
+  --white:       #2e2924;
+  --text:        #e8e3da;
+  --text-2:      #a8a29e;
+  --text-3:      #6b7280;
+  --shadow-sm:   0 2px 12px rgba(0,0,0,0.3);
+  --shadow-md:   0 8px 32px rgba(0,0,0,0.45);
+  --shadow-lg:   0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  font-family:'Inter', system-ui, sans-serif;
+  font-weight:400;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  transition:background var(--transition), color var(--transition);
+}
+
+h1,h2,h3,h4 {
+  font-family:'Cormorant Garamond', Georgia, serif;
+  line-height:1.2;
+  font-weight:500;
+}
+
+a { color:inherit; text-decoration:none; transition:color var(--transition); }
+img { max-width:100%; display:block; }
+button { cursor:pointer; border:none; background:none; font-family:inherit; }
+ul { list-style:none; }
+address { font-style:normal; }
+
+/* ── Containers ───────────────────────────────────────────── */
+.container {
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 2rem;
+}
+
+.section { padding:var(--section-v) 0; }
+
+/* Koyu bölümler */
+.dark-section {
+  background:var(--ink);
+}
+
+body.dark .dark-section {
+  background:var(--ink-2);
+}
+
+/* ── Tipografi yardımcıları ───────────────────────────────── */
+.eyebrow {
+  font-family:'Inter', sans-serif;
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.eyebrow.light { color:var(--gold-light); }
+
+.section-title {
+  font-size:clamp(2rem, 4.5vw, 3.2rem);
+  color:var(--text);
+  margin:0.6rem 0 1.4rem;
+  font-weight:400;
+}
+.section-title.light { color:var(--text-light); }
+.section-title em {
+  font-style:italic;
+  color:var(--gold);
+}
+
+.label-row {
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  margin-bottom:0.25rem;
+}
+.label-row.center { justify-content:center; }
+
+.gold-dot {
+  display:inline-block;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--gold);
+  flex-shrink:0;
+}
+
+.title-rule {
+  width:48px; height:1.5px;
+  background:linear-gradient(90deg, var(--gold), transparent);
+  margin:0 auto 3rem;
+}
+
+.section-header { text-align:center; }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:0.55rem;
+  padding:0.85rem 2.2rem;
+  font-family:'Inter', sans-serif;
+  font-size:0.82rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  transition:all var(--transition);
+  cursor:pointer;
+  border:1.5px solid transparent;
+}
+
+/* Altın dolu */
+.btn-gold {
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+.btn-gold:hover {
+  background:var(--gold-light);
+  border-color:var(--gold-light);
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(196,163,90,0.4);
+}
+
+/* Hayalet (hero üzerinde) */
+.btn-ghost {
+  background:transparent;
+  color:rgba(255,255,255,0.85);
+  border-color:rgba(255,255,255,0.3);
+}
+.btn-ghost:hover {
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+/* Koyu dolu (açık zemin üzerinde) */
+.btn-dark {
+  background:var(--ink);
+  color:var(--text-light);
+  border-color:var(--ink);
+}
+.btn-dark:hover {
+  background:var(--ink-2);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(7,9,13,0.25);
+}
+body.dark .btn-dark {
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+body.dark .btn-dark:hover { background:var(--gold-light); }
+
+/* Altın kenar (koyu zemin üzerinde) */
+.btn-gold-outline {
+  background:transparent;
+  color:var(--gold);
+  border-color:var(--gold-border);
+}
+.btn-gold-outline:hover {
+  background:var(--gold-dim);
+  border-color:var(--gold);
+  transform:translateY(-2px);
+}
+
+.btn-submit { width:100%; justify-content:center; }
+
+/* ── Animasyon temel sınıfları ────────────────────────────── */
+.reveal-up, .reveal-left, .reveal-right {
+  opacity:0;
+  transition:opacity var(--transition-slow), transform var(--transition-slow);
+  transition-delay: var(--d, 0s);
+}
+.reveal-up   { transform:translateY(36px); }
+.reveal-left { transform:translateX(-36px); }
+.reveal-right{ transform:translateX(36px); }
+
+.reveal-up.in, .reveal-left.in, .reveal-right.in {
+  opacity:1;
+  transform:none;
+}
+
+/* ════════════════════════════════════════════
+   NAVBAR
+════════════════════════════════════════════ */
+.navbar {
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:900;
+  transition:background var(--transition), border-color var(--transition);
+}
+
+.navbar.scrolled {
+  background:rgba(7,9,13,0.96);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(196,163,90,0.12);
+}
+
+body.dark .navbar.scrolled {
+  background:rgba(13,17,23,0.97);
+}
+
+.nav-inner {
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 2rem;
+  height:var(--navbar-h);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+}
+
+/* ── Logo ── */
+.logo {
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+  flex-shrink:0;
+}
+
+.logo-emblem {
+  width:40px; height:40px;
+  border:1.5px solid var(--gold-border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  font-size:1rem;
+  flex-shrink:0;
+  transition:border-color var(--transition);
+}
+
+.logo:hover .logo-emblem { border-color:var(--gold); }
+
+.logo-wordmark {
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+  gap:3px;
+}
+
+/* ANA İSİM — Cinzel, kartvizit başlığındaki "AKTAŞ & KARACA" ile uyumlu */
+.logo-name {
+  font-family:'Cinzel', serif;
+  font-size:1.0rem;
+  font-weight:600;
+  letter-spacing:0.07em;
+  color:#fff;
+  text-transform:uppercase;
+  line-height:1;
+  transition:color var(--transition);
+}
+
+.navbar.scrolled .logo-name { color:#fff; }
+body.dark .navbar:not(.scrolled) .logo-name { color:#fff; }
+
+/* Açık zemin sayfalarında logo için (scrolled olmadığında zaten hero üstünde) */
+.logo-tagline {
+  font-family:'Inter', sans-serif;
+  font-size:0.58rem;
+  font-weight:500;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* ── Nav links ── */
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:0.1rem;
+}
+
+.nav-links a {
+  font-family:'Inter', sans-serif;
+  font-size:0.8rem;
+  font-weight:500;
+  letter-spacing:0.05em;
+  padding:0.5rem 0.9rem;
+  color:rgba(255,255,255,0.72);
+  text-transform:uppercase;
+  transition:color var(--transition);
+  position:relative;
+}
+
+.nav-links a::after {
+  content:'';
+  position:absolute;
+  bottom:-2px; left:0.9rem; right:0.9rem;
+  height:1px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform var(--transition);
+}
+
+.nav-links a:hover { color:#fff; }
+.nav-links a:hover::after,
+.nav-links a.active::after { transform:scaleX(1); }
+
+/* İletişim linki farklı */
+.nav-links a.nav-cta {
+  border:1px solid var(--gold-border);
+  color:var(--gold);
+  padding:0.45rem 1.1rem;
+  transition:all var(--transition);
+}
+.nav-links a.nav-cta::after { display:none; }
+.nav-links a.nav-cta:hover {
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+
+/* ── Nav controls ── */
+.nav-controls {
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+}
+
+.lang-switcher {
+  display:flex;
+  align-items:center;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:2px;
+  overflow:hidden;
+}
+
+.lang-btn {
+  padding:0.3rem 0.6rem;
+  font-family:'Inter', sans-serif;
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:0.05em;
+  color:rgba(255,255,255,0.5);
+  transition:all var(--transition);
+  border-right:1px solid rgba(255,255,255,0.1);
+}
+.lang-btn:last-child { border-right:none; }
+.lang-btn.active, .lang-btn:hover {
+  background:var(--gold);
+  color:var(--ink);
+}
+
+.theme-toggle {
+  width:34px; height:34px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:2px;
+  color:rgba(255,255,255,0.5);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.85rem;
+  transition:all var(--transition);
+}
+.theme-toggle:hover { border-color:var(--gold); color:var(--gold); }
+
+/* ── Hamburger ── */
+.hamburger {
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  width:34px; height:34px;
+  padding:7px 5px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:2px;
+  transition:border-color var(--transition);
+}
+.hamburger:hover { border-color:var(--gold); }
+.hamburger span {
+  display:block;
+  height:1.5px;
+  background:rgba(255,255,255,0.7);
+  border-radius:1px;
+  transition:all var(--transition);
+}
+.hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile Menu ── */
+.mobile-menu {
+  display:none;
+  background:rgba(7,9,13,0.98);
+  border-top:1px solid rgba(196,163,90,0.12);
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.mobile-menu.open { max-height:420px; }
+.mobile-menu ul {
+  padding:1.5rem 2rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.1rem;
+}
+.mobile-menu a {
+  display:block;
+  padding:0.65rem 0;
+  font-family:'Inter', sans-serif;
+  font-size:0.85rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.65);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:color var(--transition);
+}
+.mobile-menu a:hover { color:var(--gold); }
+.mobile-lang {
+  padding:1rem 2rem 1.5rem;
+  display:flex;
+  gap:0.5rem;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.mobile-lang .lang-btn {
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:2px;
+  color:rgba(255,255,255,0.45);
+}
+.mobile-lang .lang-btn.active,
+.mobile-lang .lang-btn:hover {
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+
+/* ════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════ */
+.hero {
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:var(--ink);
+  overflow:hidden;
+}
+
+/* Arka plan desen + degrade */
+.hero-bg {
+  position:absolute;
+  inset:0;
+}
+
+.hero-lines {
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(196,163,90,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196,163,90,0.04) 1px, transparent 1px);
+  background-size:80px 80px;
+}
+
+.hero-vignette {
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 80% at 20% 50%, rgba(196,163,90,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 90% 10%, rgba(196,163,90,0.03) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(7,9,13,0.3) 0%, transparent 30%, rgba(7,9,13,0.6) 100%);
+}
+
+.hero-content {
+  position:relative;
+  z-index:1;
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 2rem;
+  padding-top:calc(var(--navbar-h) + 4rem);
+  padding-bottom:6rem;
+}
+
+.hero-overline {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:2rem;
+  font-family:'Cinzel', serif;
+  font-size:0.65rem;
+  font-weight:400;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.gold-line {
+  display:block;
+  flex:0 0 40px;
+  height:1px;
+  background:var(--gold);
+  opacity:0.5;
+}
+
+.hero-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(3.2rem, 7.5vw, 6rem);
+  font-weight:300;
+  line-height:1.08;
+  color:#fff;
+  margin-bottom:2rem;
+  letter-spacing:-0.01em;
+  font-variant-ligatures: no-common-ligatures;
+  font-feature-settings: "liga" 0, "clig" 0;
+}
+/* em satırı — Great Vibes kaligrafi, kartvizit imzasını anımsatır */
+.hero-title em {
+  font-family:'Great Vibes', cursive;
+  font-style:normal;
+  font-size:1.25em;
+  color:var(--gold);
+  font-weight:400;
+  line-height:1;
+  display:block;
+  margin-top:0.1em;
+}
+
+.hero-desc {
+  font-size:1.05rem;
+  font-weight:300;
+  color:rgba(255,255,255,0.62);
+  line-height:1.85;
+  max-width:560px;
+  margin-bottom:3rem;
+}
+
+.hero-actions {
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  position:absolute;
+  bottom:2.5rem;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1;
+}
+.scroll-line {
+  width:1px;
+  height:52px;
+  background:linear-gradient(to bottom, transparent, var(--gold), transparent);
+  margin:0 auto;
+  animation:scrollDrop 2s ease-in-out infinite;
+}
+@keyframes scrollDrop {
+  0%,100%  { opacity:0.3; transform:scaleY(0.6) translateY(-8px); }
+  50%      { opacity:1;   transform:scaleY(1)   translateY(0); }
+}
+
+/* ════════════════════════════════════════════
+   ABOUT
+════════════════════════════════════════════ */
+.about { background:var(--cream); }
+body.dark .about { background:var(--ink-2); }
+
+.about-layout {
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:6rem;
+  align-items:center;
+}
+
+/* Görsel sütun */
+.about-visual {
+  position:relative;
+}
+
+.about-frame {
+  position:relative;
+}
+
+.about-img-block {
+  aspect-ratio:4/5;
+  background:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:4.5rem;
+  color:rgba(196,163,90,0.2);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Sol altın kenar çizgisi */
+.about-img-block::before {
+  content:'';
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width:2px;
+  background:linear-gradient(to bottom, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+}
+
+/* Alt sağ bilgi kutusu */
+.about-badge {
+  position:absolute;
+  bottom:-1.5rem; right:-1.5rem;
+  background:var(--gold);
+  padding:1.25rem 1.75rem;
+  text-align:center;
+}
+.badge-year {
+  display:block;
+  font-family:'Cinzel', serif;
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1;
+}
+.badge-text {
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ink);
+  opacity:0.75;
+}
+
+/* Dikey ince çizgi (sol kenar süsü) */
+.about-sidebar-line {
+  position:absolute;
+  left:-2rem; top:10%; bottom:10%;
+  width:1px;
+  background:linear-gradient(to bottom, transparent, var(--gold-border), transparent);
+}
+
+/* Metin sütunu */
+.about-copy > p {
+  color:var(--text-2);
+  margin-bottom:1.1rem;
+  font-size:1.02rem;
+}
+
+.pillars {
+  margin-top:2.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+  padding-top:2rem;
+  border-top:1px solid rgba(196,163,90,0.15);
+}
+
+.pillar {
+  display:flex;
+  align-items:flex-start;
+  gap:1rem;
+}
+
+.pillar-icon {
+  width:36px; height:36px;
+  border:1px solid var(--gold-border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  font-size:0.85rem;
+  flex-shrink:0;
+  margin-top:2px;
+}
+
+.pillar h4 {
+  font-family:'Inter', sans-serif;
+  font-size:0.88rem;
+  font-weight:600;
+  letter-spacing:0.03em;
+  color:var(--text);
+  margin-bottom:0.2rem;
+}
+
+.pillar p {
+  font-size:0.85rem;
+  color:var(--text-3);
+  margin:0;
+}
+
+/* ════════════════════════════════════════════
+   SERVICES  (koyu zemin)
+════════════════════════════════════════════ */
+.services-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:rgba(196,163,90,0.08);
+  border:1px solid rgba(196,163,90,0.08);
+}
+
+.srv-card {
+  background:var(--ink-2);
+  padding:2.5rem 2rem;
+  position:relative;
+  overflow:hidden;
+  transition:background var(--transition);
+  cursor:default;
+}
+
+.srv-card::after {
+  content:'';
+  position:absolute;
+  bottom:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg, var(--gold), transparent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s ease;
+}
+
+.srv-card:hover {
+  background:var(--ink-3);
+}
+
+.srv-card:hover::after { transform:scaleX(1); }
+
+.srv-num {
+  font-family:'Cinzel', serif;
+  font-size:0.62rem;
+  font-weight:600;
+  letter-spacing:0.15em;
+  color:var(--gold);
+  opacity:0.5;
+  margin-bottom:1.25rem;
+}
+
+.srv-icon {
+  font-size:1.5rem;
+  color:var(--gold);
+  margin-bottom:1.25rem;
+  opacity:0.8;
+  transition:opacity var(--transition);
+}
+.srv-card:hover .srv-icon { opacity:1; }
+
+.srv-card h3 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.3rem;
+  font-weight:500;
+  color:var(--text-light);
+  margin-bottom:0.85rem;
+}
+
+.srv-card p {
+  font-size:0.87rem;
+  color:var(--text-light-2);
+  line-height:1.75;
+}
+
+.srv-arrow {
+  position:absolute;
+  bottom:1.5rem; right:1.75rem;
+  color:var(--gold);
+  font-size:0.75rem;
+  opacity:0;
+  transform:translateX(-6px);
+  transition:all var(--transition);
+}
+.srv-card:hover .srv-arrow { opacity:1; transform:translateX(0); }
+
+/* ════════════════════════════════════════════
+   WHY US
+════════════════════════════════════════════ */
+.why-us { background:var(--cream-2); }
+body.dark .why-us { background:var(--ink-2); }
+
+.why-layout {
+  display:grid;
+  grid-template-columns:1fr 1.25fr;
+  gap:6rem;
+  align-items:start;
+}
+
+.why-intro {
+  font-size:1.02rem;
+  color:var(--text-2);
+  margin-bottom:2.5rem;
+  line-height:1.85;
+}
+
+.why-list {
+  display:flex;
+  flex-direction:column;
+}
+
+.why-row {
+  display:flex;
+  gap:2rem;
+  align-items:flex-start;
+  padding:1.75rem 0;
+  border-bottom:1px solid rgba(196,163,90,0.1);
+  transition:background var(--transition);
+}
+
+.why-row:first-child { padding-top:0; }
+.why-row:last-child { border-bottom:none; padding-bottom:0; }
+
+.why-num {
+  font-family:'Cinzel', serif;
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  color:var(--gold);
+  opacity:0.6;
+  padding-top:4px;
+  flex-shrink:0;
+  width:24px;
+}
+
+.why-content h4 {
+  font-family:'Inter', sans-serif;
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:0.3rem;
+  letter-spacing:0.02em;
+}
+
+.why-content p {
+  font-size:0.87rem;
+  color:var(--text-3);
+  line-height:1.7;
+}
+
+/* ════════════════════════════════════════════
+   BLOG  (koyu zemin)
+════════════════════════════════════════════ */
+.blog-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:rgba(196,163,90,0.08);
+  border:1px solid rgba(196,163,90,0.08);
+  margin-bottom:3rem;
+}
+
+.blog-card {
+  background:var(--ink-2);
+  padding:2.5rem 2rem;
+  display:flex;
+  flex-direction:column;
+  transition:background var(--transition);
+  position:relative;
+}
+
+.blog-card::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:1px;
+  background:linear-gradient(90deg, var(--gold), transparent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s ease;
+}
+
+.blog-card:hover { background:var(--ink-3); }
+.blog-card:hover::before { transform:scaleX(1); }
+
+.blog-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:1.5rem;
+}
+
+.blog-cat {
+  font-family:'Inter', sans-serif;
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--gold-border);
+  padding:0.25rem 0.7rem;
+}
+
+.blog-date {
+  font-size:0.72rem;
+  color:var(--text-light-2);
+  font-weight:400;
+}
+
+.blog-card h3 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.25rem;
+  font-weight:500;
+  color:var(--text-light);
+  line-height:1.35;
+  margin-bottom:0.85rem;
+}
+
+.blog-card p {
+  font-size:0.87rem;
+  color:var(--text-light-2);
+  line-height:1.7;
+  flex:1;
+  margin-bottom:1.5rem;
+}
+
+.blog-link {
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-family:'Inter', sans-serif;
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gold);
+  transition:gap var(--transition), color var(--transition);
+  margin-top:auto;
+}
+.blog-link:hover { gap:0.9rem; }
+
+.blog-footer { text-align:center; }
+
+/* ════════════════════════════════════════════
+   CONTACT
+════════════════════════════════════════════ */
+.contact { background:var(--cream); }
+body.dark .contact { background:var(--ink-2); }
+
+.contact-layout {
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  gap:6rem;
+  align-items:start;
+}
+
+/* Sol bilgi sütunu */
+.contact-left > p {
+  color:var(--text-2);
+  margin-bottom:2.5rem;
+  font-size:1rem;
+}
+
+.contact-details {
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  margin-bottom:2rem;
+}
+
+.contact-item {
+  display:flex;
+  align-items:flex-start;
+  gap:1rem;
+  padding:1.1rem 0;
+  border-bottom:1px solid rgba(196,163,90,0.1);
+}
+.contact-item:first-child { padding-top:0; }
+
+.contact-item > i {
+  color:var(--gold);
+  font-size:0.9rem;
+  margin-top:3px;
+  flex-shrink:0;
+  width:16px;
+  text-align:center;
+}
+
+.contact-item > div {
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.contact-item-label {
+  font-family:'Inter', sans-serif;
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--text-3);
+}
+
+.contact-item span:not(.contact-item-label),
+.contact-item a {
+  font-size:0.9rem;
+  color:var(--text-2);
+}
+.contact-item a:hover { color:var(--gold); }
+
+.map-block {
+  background:var(--ink);
+  height:180px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0.75rem;
+  color:var(--text-light-2);
+  font-size:0.8rem;
+  letter-spacing:0.05em;
+  border:1px solid rgba(196,163,90,0.1);
+  cursor:pointer;
+  transition:border-color var(--transition);
+}
+.map-block:hover { border-color:var(--gold-border); }
+.map-block i { font-size:1.8rem; color:var(--gold); opacity:0.5; }
+
+/* Form sütunu */
+.contact-form {
+  background:var(--white);
+  border:1px solid rgba(196,163,90,0.1);
+  padding:2.5rem;
+}
+body.dark .contact-form {
+  background:var(--ink-3);
+  border-color:rgba(196,163,90,0.1);
+}
+
+.form-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+
+.form-group {
+  display:flex;
+  flex-direction:column;
+  gap:0.4rem;
+  margin-bottom:1.1rem;
+}
+.form-group.full { grid-column:1/-1; }
+
+.form-group label {
+  font-family:'Inter', sans-serif;
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--text-3);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding:0.75rem 1rem;
+  background:var(--cream);
+  border:1px solid rgba(196,163,90,0.15);
+  font-family:'Inter', sans-serif;
+  font-size:0.9rem;
+  color:var(--text);
+  transition:border-color var(--transition), background var(--transition);
+  outline:none;
+  width:100%;
+  border-radius:0;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+body.dark .form-group input,
+body.dark .form-group select,
+body.dark .form-group textarea {
+  background:var(--ink-2);
+  color:var(--text-light);
+  border-color:rgba(196,163,90,0.12);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color:var(--gold);
+  background:var(--white);
+}
+
+body.dark .form-group input:focus,
+body.dark .form-group select:focus,
+body.dark .form-group textarea:focus {
+  background:var(--ink-3);
+}
+
+.form-group textarea { resize:vertical; min-height:120px; }
+
+.form-privacy {
+  font-size:0.72rem;
+  color:var(--text-3);
+  text-align:center;
+  margin-top:0.6rem;
+  letter-spacing:0.02em;
+}
+.form-privacy i { color:var(--gold); margin-right:0.3rem; }
+
+.form-success {
+  display:none;
+  align-items:center;
+  gap:0.75rem;
+  padding:1rem 1.25rem;
+  margin-top:1rem;
+  border:1px solid rgba(34,197,94,0.25);
+  font-size:0.88rem;
+  color:#15803d;
+}
+body.dark .form-success { color:#86efac; border-color:rgba(134,239,172,0.2); }
+.form-success.show { display:flex; }
+.form-success i { color:#22c55e; font-size:1.1rem; }
+
+/* ════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════ */
+.footer { background:var(--ink); }
+
+.footer-top { padding:4.5rem 0 3.5rem; }
+
+.footer-top-inner {
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.4fr;
+  gap:3.5rem;
+}
+
+.footer-brand .logo { margin-bottom:1.25rem; }
+
+.footer-desc {
+  font-size:0.88rem;
+  color:var(--text-light-2);
+  line-height:1.75;
+  margin-bottom:1.5rem;
+  max-width:280px;
+}
+
+.social-row {
+  display:flex;
+  gap:0.6rem;
+}
+
+.social-link {
+  width:34px; height:34px;
+  border:1px solid rgba(196,163,90,0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,0.4);
+  font-size:0.8rem;
+  transition:all var(--transition);
+}
+.social-link:hover {
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+.footer-nav h4,
+.footer-contact h4 {
+  font-family:'Cinzel', serif;
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.5rem;
+}
+
+.footer-nav ul { display:flex; flex-direction:column; gap:0.7rem; }
+.footer-nav a {
+  font-size:0.85rem;
+  color:var(--text-light-2);
+  transition:color var(--transition);
+}
+.footer-nav a:hover { color:var(--gold); }
+
+.footer-contact p {
+  display:flex;
+  align-items:flex-start;
+  gap:0.65rem;
+  font-size:0.85rem;
+  color:var(--text-light-2);
+  margin-bottom:0.85rem;
+}
+.footer-contact i { color:var(--gold); flex-shrink:0; margin-top:3px; }
+.footer-contact a { color:var(--text-light-2); }
+.footer-contact a:hover { color:var(--gold); }
+
+.footer-bottom {
+  border-top:1px solid rgba(196,163,90,0.1);
+  padding:1.5rem 0;
+}
+
+.footer-bottom-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  font-size:0.78rem;
+  color:rgba(255,255,255,0.3);
+  letter-spacing:0.03em;
+}
+.footer-bottom-inner a { color:rgba(255,255,255,0.3); }
+.footer-bottom-inner a:hover { color:var(--gold); }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position:fixed;
+  bottom:2rem; right:2rem;
+  z-index:800;
+  width:44px; height:44px;
+  background:transparent;
+  border:1px solid var(--gold-border);
+  color:var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.85rem;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(8px);
+  transition:all var(--transition);
+}
+.back-to-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+.back-to-top:hover { background:var(--gold); color:var(--ink); }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media (max-width:1024px) {
+  :root { --section-v:5.5rem; }
+
+  .about-layout  { grid-template-columns:1fr; gap:4rem; }
+  .why-layout    { grid-template-columns:1fr; gap:3.5rem; }
+  .contact-layout{ grid-template-columns:1fr; gap:3.5rem; }
+  .footer-top-inner { grid-template-columns:1fr 1fr; gap:2.5rem; }
+  .footer-brand { grid-column:1/-1; }
+
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .mobile-menu { display:block; }
+}
+
+@media (max-width:768px) {
+  .services-grid { grid-template-columns:1fr 1fr; }
+  .blog-grid     { grid-template-columns:1fr; }
+  .form-row      { grid-template-columns:1fr; }
+  .footer-top-inner { grid-template-columns:1fr; gap:2rem; }
+  .footer-brand { grid-column:auto; }
+}
+
+@media (max-width:540px) {
+  :root { --section-v:4rem; --navbar-h:60px; }
+  .services-grid { grid-template-columns:1fr; }
+  .hero-actions  { flex-direction:column; align-items:flex-start; }
+  .hero-actions .btn { width:100%; justify-content:center; }
+  .hero-title    { font-size:clamp(2.8rem,10vw,4rem); }
+  .contact-form  { padding:1.75rem; }
+  .about-badge   { right:0; bottom:-1rem; }
+  .footer-bottom-inner { flex-direction:column; text-align:center; }
+  .lang-switcher { display:none; }
+  .back-to-top   { bottom:1.25rem; right:1.25rem; }
+}
+
+/* ── Focus görünürlüğü (WCAG) ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* ── Hareketi azalt ── */
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:0.01ms !important;
+    transition-duration:0.1ms !important;
+  }
+  .scroll-line { animation:none; }
+}
