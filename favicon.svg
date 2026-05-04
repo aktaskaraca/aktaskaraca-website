@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Arka plan -->
+  <rect width="32" height="32" fill="#1a1714"/>
+  <!-- İnce altın çerçeve -->
+  <rect x="1.5" y="1.5" width="29" height="29" fill="none" stroke="#b8a87a" stroke-width="0.8" opacity="0.6"/>
+  <!-- A harfi -->
+  <text x="7" y="22" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#b8a87a" letter-spacing="0">A</text>
+  <!-- & işareti — küçük, altın -->
+  <text x="16.5" y="19" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#b8a87a" opacity="0.75">&amp;</text>
+  <!-- K harfi -->
+  <text x="19.5" y="22" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#b8a87a" letter-spacing="0">K</text>
+</svg>
