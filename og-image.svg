@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1714;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#231f1b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4c49a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8a87a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Arka plan -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid desen -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#b8a87a" stroke-width="0.4" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Dış çerçeve -->
+  <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#b8a87a" stroke-width="1" opacity="0.35"/>
+  <!-- İç çerçeve -->
+  <rect x="42" y="42" width="1116" height="546" fill="none" stroke="#b8a87a" stroke-width="0.5" opacity="0.18"/>
+
+  <!-- Sol altın dikey vurgu çizgisi -->
+  <rect x="100" y="80" width="1.5" height="470" fill="url(#gold)" opacity="0.4"/>
+
+  <!-- Üst etiket -->
+  <text x="600" y="185" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="400" fill="#b8a87a" text-anchor="middle" letter-spacing="8" opacity="0.8">HUKUK BÜROSU  ·  İZMİR</text>
+
+  <!-- Üst ince çizgi -->
+  <line x1="440" y1="200" x2="760" y2="200" stroke="#b8a87a" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Ana isim: Aktaş -->
+  <text x="600" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700" fill="#f0ebe0" text-anchor="middle" letter-spacing="-1">Aktaş</text>
+
+  <!-- & işareti — altın, küçük, ortada -->
+  <text x="600" y="368" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#b8a87a" text-anchor="middle" letter-spacing="4">&amp;</text>
+
+  <!-- Ana isim: Karaca -->
+  <text x="600" y="440" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700" fill="#f0ebe0" text-anchor="middle" letter-spacing="-1">Karaca</text>
+
+  <!-- Alt ince çizgi -->
+  <line x1="420" y1="465" x2="780" y2="465" stroke="#b8a87a" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Alt slogan -->
+  <text x="600" y="502" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="400" fill="#b8a87a" text-anchor="middle" letter-spacing="3" opacity="0.75">Hukuki İhtilaflarda Çözüm Ortağınız</text>
+
+  <!-- Website -->
+  <text x="600" y="548" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#b8a87a" text-anchor="middle" letter-spacing="2" opacity="0.45">aktaskaraca.com</text>
+
+  <!-- Sağ alt dekoratif nokta -->
+  <circle cx="600" cy="197" r="2.5" fill="#b8a87a" opacity="0.5"/>
+  <circle cx="600" cy="467" r="2.5" fill="#b8a87a" opacity="0.5"/>
+</svg>
