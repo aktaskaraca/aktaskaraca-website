@@ -31,7 +31,7 @@ const T = {
     'srv.commercial.desc':'Şirket kuruluşu, ticari sözleşmeler, ortaklık uyuşmazlıkları ve ticari davaların çözümü.',
     'srv.family.title':'Aile Hukuku',
     'srv.family.desc':'Boşanma, velayet, nafaka ve mal paylaşımı süreçlerinde hassas ve profesyonel danışmanlık.',
-    'srv.realestate.title':'Emlak Hukuku',
+    'srv.realestate.title':'Gayrimenkul Hukuku',
     'srv.realestate.desc':'Tapu iptali, kat mülkiyeti, kira uyuşmazlıkları ve gayrimenkul işlemlerinde uzman rehberlik.',
     'srv.labor.title':'İş Hukuku',
     'srv.labor.desc':'İşçi ve işveren hakları, haksız fesih, kıdem tazminatı ve iş kazalarında kapsamlı destek.',
