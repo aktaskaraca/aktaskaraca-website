@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/blog"
+public_folder: "/images/blog"
+
+locale: tr
+
+collections:
+  - name: "blog"
+    label: "Blog Makaleleri"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - label: "Kategori"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "İdari Hukuk", value: "idari-hukuk" }
+          - { label: "Ticari Hukuk", value: "ticari-hukuk" }
+          - { label: "Aile Hukuku", value: "aile-hukuku" }
+          - { label: "Emlak Hukuku", value: "emlak-hukuku" }
+          - { label: "İş Hukuku", value: "is-hukuku" }
+          - { label: "Ceza Hukuku", value: "ceza-hukuku" }
+          - { label: "Genel", value: "genel" }
+      - { label: "Kısa Açıklama", name: "excerpt", widget: "text" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
