@@ -38,12 +38,12 @@
 
       <!-- Desktop Links -->
       <ul class="nav-links" role="list">
-        <li><a href="#hero"     data-i18n="nav.home">Anasayfa</a></li>
-        <li><a href="#about"    data-i18n="nav.about">Hakkımızda</a></li>
-        <li><a href="#services" data-i18n="nav.services">Hizmetler</a></li>
-        <li><a href="#why-us"   data-i18n="nav.whyus">Neden Biz</a></li>
-        <li><a href="#blog"     data-i18n="nav.blog">Blog</a></li>
-        <li><a href="#contact"  class="nav-cta" data-i18n="nav.contact">İletişim</a></li>
+        <li><a href="#hero"          data-i18n="nav.home">Anasayfa</a></li>
+        <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
+        <li><a href="hizmetler.html"  data-i18n="nav.services">Hizmetler</a></li>
+        <li><a href="#why-us"         data-i18n="nav.whyus">Neden Biz</a></li>
+        <li><a href="blog.html"       data-i18n="nav.blog">Blog</a></li>
+        <li><a href="iletisim.html"   class="nav-cta" data-i18n="nav.contact">İletişim</a></li>
       </ul>
 
       <!-- Controls -->
@@ -65,12 +65,12 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
       <ul role="list">
-        <li><a href="#hero"     data-i18n="nav.home">Anasayfa</a></li>
-        <li><a href="#about"    data-i18n="nav.about">Hakkımızda</a></li>
-        <li><a href="#services" data-i18n="nav.services">Hizmetler</a></li>
-        <li><a href="#why-us"   data-i18n="nav.whyus">Neden Biz</a></li>
-        <li><a href="#blog"     data-i18n="nav.blog">Blog</a></li>
-        <li><a href="#contact"  data-i18n="nav.contact">İletişim</a></li>
+        <li><a href="#hero"           data-i18n="nav.home">Anasayfa</a></li>
+        <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
+        <li><a href="hizmetler.html"  data-i18n="nav.services">Hizmetler</a></li>
+        <li><a href="#why-us"         data-i18n="nav.whyus">Neden Biz</a></li>
+        <li><a href="blog.html"       data-i18n="nav.blog">Blog</a></li>
+        <li><a href="iletisim.html"   data-i18n="nav.contact">İletişim</a></li>
       </ul>
       <div class="mobile-lang">
         <button class="lang-btn active" data-lang="tr">TR</button>
@@ -431,9 +431,14 @@
             </div>
           </div>
 
-          <div class="map-block" aria-label="Ofis konumu">
-            <i class="fas fa-map-location-dot" aria-hidden="true"></i>
-            <span data-i18n="contact.map">Google Maps burada görünecek</span>
+          <div class="map-wrapper">
+            <iframe
+              src="https://maps.google.com/maps?q=Laleli+Mahallesi+428.+Sokak+No:1/2+Buca+İzmir&output=embed&z=16"
+              width="100%" height="220" style="border:0; display:block;"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Aktaş & Karaca Hukuk Bürosu Konum">
+            </iframe>
           </div>
         </div>
 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İletişim — Aktaş & Karaca Hukuk Bürosu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .under-hero { min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--ink); position:relative; overflow:hidden; }
+    .under-lines { position:absolute; inset:0; background-image: linear-gradient(rgba(196,163,90,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(196,163,90,0.04) 1px,transparent 1px); background-size:80px 80px; }
+    .under-content { position:relative; z-index:1; text-align:center; padding:2rem; }
+    .under-emblem { font-size:3rem; color:var(--gold); opacity:0.3; margin-bottom:2rem; }
+    .under-label { font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:1.5rem; }
+    .under-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:300; color:#fff; margin-bottom:1rem; }
+    .under-desc { font-size:0.95rem; color:rgba(255,255,255,0.45); margin-bottom:2.5rem; }
+    .under-back { display:inline-flex; align-items:center; gap:0.6rem; font-family:'Inter',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold-border); padding:0.75rem 1.75rem; transition:all 0.3s ease; }
+    .under-back:hover { background:var(--gold); color:var(--ink); }
+  </style>
+</head>
+<body>
+  <nav class="navbar scrolled" role="navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-emblem"><i class="fas fa-scale-balanced"></i></span>
+        <div class="logo-wordmark">
+          <span class="logo-name">Aktaş &amp; Karaca</span>
+          <span class="logo-tagline">Hukuk Bürosu</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Anasayfa</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="hizmetler.html">Hizmetler</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="iletisim.html" class="nav-cta">İletişim</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Anasayfa</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="hizmetler.html">Hizmetler</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="under-hero">
+    <div class="under-lines"></div>
+    <div class="under-content">
+      <div class="under-emblem"><i class="fas fa-scale-balanced"></i></div>
+      <div class="under-label">
+        <span style="width:40px;height:1px;background:var(--gold);opacity:0.5;display:block"></span>
+        Aktaş &amp; Karaca · Hukuk Bürosu
+        <span style="width:40px;height:1px;background:var(--gold);opacity:0.5;display:block"></span>
+      </div>
+      <h1 class="under-title">İletişim</h1>
+      <p class="under-desc">Bu sayfa yakında hazır olacak.</p>
+      <a href="index.html" class="under-back"><i class="fas fa-arrow-left"></i> Ana Sayfaya Dön</a>
+    </div>
+  </div>
+
+  <script>
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobileMenu');
+    h.addEventListener('click', () => {
+      const open = h.classList.toggle('open');
+      m.classList.toggle('open', open);
+    });
+  </script>
+</body>
+</html>
