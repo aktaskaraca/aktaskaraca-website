@@ -363,14 +363,21 @@ form.addEventListener('submit', e => {
   submit.disabled = true;
   submit.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
-  /* Gerçek gönderim için burası fetch() ile değiştirilir */
-  setTimeout(() => {
-    submit.disabled = false;
-    submit.innerHTML = `<span>${T[lang]['form.send']}</span> <i class="fas fa-paper-plane"></i>`;
-    success.classList.add('show');
-    form.reset();
-    setTimeout(() => success.classList.remove('show'), 7000);
-  }, 1100);
+  /* Netlify Forms'a gönder */
+  const data = new FormData(form);
+  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString() })
+    .then(() => {
+      submit.disabled = false;
+      submit.innerHTML = `<span>${T[lang]['form.send']}</span> <i class="fas fa-paper-plane"></i>`;
+      success.classList.add('show');
+      form.reset();
+      setTimeout(() => success.classList.remove('show'), 7000);
+    })
+    .catch(() => {
+      submit.disabled = false;
+      submit.innerHTML = `<span>${T[lang]['form.send']}</span> <i class="fas fa-paper-plane"></i>`;
+    });
 });
 
 /* ══ Smooth Scroll ══════════════════════════════════════════ */
