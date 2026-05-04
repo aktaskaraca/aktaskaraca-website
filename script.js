@@ -363,16 +363,18 @@ form.addEventListener('submit', e => {
   submit.disabled = true;
   submit.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
-  /* Netlify Forms'a gönder */
+  /* Formspree'ye gönder — info@aktaskaraca.com'a mail olarak düşer */
   const data = new FormData(form);
-  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(data).toString() })
-    .then(() => {
+  fetch('https://formspree.io/f/mlgzjaod', { method: 'POST',
+    headers: { 'Accept': 'application/json' }, body: data })
+    .then(res => {
       submit.disabled = false;
       submit.innerHTML = `<span>${T[lang]['form.send']}</span> <i class="fas fa-paper-plane"></i>`;
-      success.classList.add('show');
-      form.reset();
-      setTimeout(() => success.classList.remove('show'), 7000);
+      if (res.ok) {
+        success.classList.add('show');
+        form.reset();
+        setTimeout(() => success.classList.remove('show'), 7000);
+      }
     })
     .catch(() => {
       submit.disabled = false;
