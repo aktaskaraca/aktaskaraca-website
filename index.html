@@ -4,600 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta name="description" content="Aktaş & Karaca Hukuk Bürosu – Profesyonel hukuki danışmanlık ve avukatlık hizmetleri, İzmir" />
-  <!-- Open Graph / WhatsApp / Social -->
+  <meta name="description" content="Aktaş & Karaca Hukuk Bürosu · Laleli Mah. 428. Sk. No:1/2 Buca / İzmir · 0232 438 87 58" />
+
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://aktaskaraca.com" />
   <meta property="og:title"        content="Aktaş & Karaca Hukuk Bürosu" />
-  <meta property="og:description"  content="Hukuki İhtilaflarda Çözüm Ortağınız · İzmir" />
+  <meta property="og:description"  content="Hukuk Bürosu · Buca / İzmir" />
   <meta property="og:image"        content="https://aktaskaraca.com/og-image.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale"       content="tr_TR" />
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Aktaş & Karaca Hukuk Bürosu" />
-  <meta name="twitter:description" content="Hukuki İhtilaflarda Çözüm Ortağınız · İzmir" />
-  <meta name="twitter:image"       content="https://aktaskaraca.com/og-image.png" />
-  <title>Aktaş & Karaca | Hukuk Bürosu</title>
 
-  <!-- Google Fonts: Great Vibes (logo kaligrafi) + Cinzel (etiket) + Cormorant Garamond (başlık) + Inter (metin) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <title>Aktaş &amp; Karaca Hukuk Bürosu</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <link rel="preload" href="fonts/CormorantGaramond.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<body data-lang="tr">
+<body>
 
-  <!-- ═══════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════ -->
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Ana menü">
-    <div class="nav-inner">
-
-      <!-- Logo -->
-      <a href="#hero" class="logo" aria-label="Aktaş & Karaca Ana Sayfa">
-        <span class="logo-emblem" aria-hidden="true">
-          <i class="fas fa-scale-balanced"></i>
-        </span>
-        <div class="logo-wordmark">
-          <span class="logo-name">Aktaş &amp; Karaca</span>
-          <span class="logo-tagline" data-i18n="nav.subtitle">Hukuk Bürosu</span>
-        </div>
-      </a>
-
-      <!-- Desktop Links -->
-      <ul class="nav-links" role="list">
-        <li><a href="#hero"          data-i18n="nav.home">Anasayfa</a></li>
-        <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
-        <li><a href="hizmetler.html"  data-i18n="nav.services">Hizmetler</a></li>
-        <li><a href="#why-us"         data-i18n="nav.whyus">Neden Biz</a></li>
-        <li><a href="blog.html"       data-i18n="nav.blog">Blog</a></li>
-        <li><a href="#contact"        class="nav-cta" data-i18n="nav.contact">İletişim</a></li>
-      </ul>
-
-      <!-- Controls -->
-      <div class="nav-controls">
-        <div class="lang-switcher" role="group" aria-label="Dil seçimi">
-          <button class="lang-btn active" data-lang="tr" aria-pressed="true">TR</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-          <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
-        </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">
-          <i class="fas fa-circle-half-stroke" id="themeIcon"></i>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+  <header class="masthead" id="top">
+    <div class="masthead-inner">
+      <a href="#top" class="masthead-name">Aktaş &amp; Karaca<span class="dot">·</span><span data-i18n="brand.sub">Hukuk Bürosu</span></a>
+      <nav class="masthead-nav" aria-label="Ana menü">
+        <a href="#buro"     data-i18n="nav.office">Büro</a>
+        <a href="#alanlar"  data-i18n="nav.areas">Çalışma Alanları</a>
+        <a href="#avukatlar" data-i18n="nav.lawyers">Avukatlar</a>
+        <a href="#iletisim" data-i18n="nav.contact">İletişim</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Dil">
+        <button data-lang="tr" class="active">TR</button><span>/</span><button data-lang="en">EN</button><span>/</span><button data-lang="de">DE</button>
       </div>
     </div>
+  </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <ul role="list">
-        <li><a href="#hero"           data-i18n="nav.home">Anasayfa</a></li>
-        <li><a href="hakkimizda.html" data-i18n="nav.about">Hakkımızda</a></li>
-        <li><a href="hizmetler.html"  data-i18n="nav.services">Hizmetler</a></li>
-        <li><a href="#why-us"         data-i18n="nav.whyus">Neden Biz</a></li>
-        <li><a href="blog.html"       data-i18n="nav.blog">Blog</a></li>
-        <li><a href="#contact"         data-i18n="nav.contact">İletişim</a></li>
-      </ul>
-      <div class="mobile-lang">
-        <button class="lang-btn active" data-lang="tr">TR</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="de">DE</button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ═══════════════════════════════════════════
-       HERO — koyu, dramatik, tam ekran
-  ═══════════════════════════════════════════ -->
-  <section class="hero" id="hero" aria-label="Karşılama">
-    <div class="hero-bg" aria-hidden="true">
-      <!-- ince geometrik çizgi deseni -->
-      <div class="hero-lines"></div>
-      <div class="hero-vignette"></div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-overline reveal-up">
-        <span class="gold-line"></span>
-        <span data-i18n="hero.overline">Hukuk Bürosu · İzmir</span>
-        <span class="gold-line"></span>
-      </div>
-
-      <h1 class="hero-title reveal-up">
-        <span data-i18n="hero.title.line1">Hukuki İhtilaflarda</span><br>
-        <em data-i18n="hero.title.line2">Çözüm Ortağınız</em>
-      </h1>
-
-      <p class="hero-desc reveal-up" data-i18n="hero.desc">
-        Her hukuki süreçte yanınızda, haklarınızı savunmak için<br>
-        deneyimli ve kararlı bir çözüm ortağı.
-      </p>
-
-      <div class="hero-actions reveal-up">
-        <a href="#contact" class="btn btn-gold" data-i18n="hero.cta">Danışma Talep Edin</a>
-        <a href="#services" class="btn btn-ghost" data-i18n="hero.explore">Hizmetlerimiz</a>
-      </div>
-    </div>
-
-    <div class="hero-scroll" aria-hidden="true">
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       ABOUT — yapım aşamasında
-  ═══════════════════════════════════════════ -->
-  <section class="section about" id="about" style="display:none">
-    <div class="container">
-      <div class="about-layout">
-
-        <div class="about-visual reveal-left">
-          <div class="about-frame">
-            <div class="about-img-block">
-              <i class="fas fa-scale-balanced" aria-hidden="true"></i>
-            </div>
-            <div class="about-badge">
-              <span class="badge-year">2009</span>
-              <span class="badge-text" data-i18n="about.since">yılından beri</span>
-            </div>
-          </div>
-          <div class="about-sidebar-line"></div>
-        </div>
-
-        <div class="about-copy reveal-right">
-          <div class="label-row">
-            <span class="gold-dot"></span>
-            <span class="eyebrow" data-i18n="about.label">Hakkımızda</span>
-          </div>
-          <h2 class="section-title" data-i18n="about.title">
-            Hukukun Gücünü<br>Güveninizle Buluşturuyoruz
-          </h2>
-          <p data-i18n="about.p1">
-            Aktaş &amp; Karaca Hukuk Bürosu, 2009 yılından bu yana İzmir'de faaliyet göstererek müvekkillerine yüksek standartlarda hukuki danışmanlık ve temsil hizmetleri sunmaktadır.
-          </p>
-          <p data-i18n="about.p2">
-            Deneyimli avukat kadromuz, her müvekkilin davasına özgün ve stratejik bir yaklaşımla yaklaşarak en iyi sonucu elde etmek için çalışmaktadır. Müvekkil odaklı hizmet anlayışımız ve etik değerlerimiz büromuzun temel taşlarını oluşturmaktadır.
-          </p>
-
-          <div class="pillars">
-            <div class="pillar">
-              <div class="pillar-icon"><i class="fas fa-star-half-stroke"></i></div>
-              <div>
-                <h4 data-i18n="about.f1.title">Deneyim</h4>
-                <p data-i18n="about.f1.text">15 yılı aşkın kesintisiz hukuki pratik.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-icon"><i class="fas fa-handshake"></i></div>
-              <div>
-                <h4 data-i18n="about.f2.title">Güvenilirlik</h4>
-                <p data-i18n="about.f2.text">Şeffaflık, etik ilkeler, tam gizlilik.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-icon"><i class="fas fa-gavel"></i></div>
-              <div>
-                <h4 data-i18n="about.f3.title">Kararlılık</h4>
-                <p data-i18n="about.f3.text">Her davada sonuna kadar kararlı savunuculuk.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       SERVICES — koyu zemin, altın kart hover
-  ═══════════════════════════════════════════ -->
-  <section class="section services dark-section" id="services" style="display:none">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <div class="label-row center">
-          <span class="gold-dot"></span>
-          <span class="eyebrow light" data-i18n="services.label">Hizmetlerimiz</span>
-          <span class="gold-dot"></span>
-        </div>
-        <h2 class="section-title light" data-i18n="services.title">Hukuki Uzmanlık Alanlarımız</h2>
-        <div class="title-rule"></div>
-      </div>
-
-      <div class="services-grid">
-
-        <article class="srv-card reveal-up" style="--d:0.05s">
-          <div class="srv-num" aria-hidden="true">01</div>
-          <div class="srv-icon"><i class="fas fa-landmark"></i></div>
-          <h3 data-i18n="srv.administrative.title">İdare Hukuku</h3>
-          <p data-i18n="srv.administrative.desc">İdari işlemler, iptal ve tam yargı davaları ile idari yargı süreçlerinde kapsamlı temsil.</p>
-          <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
-        </article>
-
-        <article class="srv-card reveal-up" style="--d:0.1s">
-          <div class="srv-num" aria-hidden="true">02</div>
-          <div class="srv-icon"><i class="fas fa-briefcase"></i></div>
-          <h3 data-i18n="srv.commercial.title">Ticaret Hukuku</h3>
-          <p data-i18n="srv.commercial.desc">Şirket kuruluşu, ticari sözleşmeler, ortaklık uyuşmazlıkları ve ticari davaların çözümü.</p>
-          <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
-        </article>
-
-        <article class="srv-card reveal-up" style="--d:0.15s">
-          <div class="srv-num" aria-hidden="true">03</div>
-          <div class="srv-icon"><i class="fas fa-house-heart"></i></div>
-          <h3 data-i18n="srv.family.title">Aile Hukuku</h3>
-          <p data-i18n="srv.family.desc">Boşanma, velayet, nafaka ve mal paylaşımı süreçlerinde hassas ve profesyonel danışmanlık.</p>
-          <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
-        </article>
-
-        <article class="srv-card reveal-up" style="--d:0.2s">
-          <div class="srv-num" aria-hidden="true">04</div>
-          <div class="srv-icon"><i class="fas fa-building-columns"></i></div>
-          <h3 data-i18n="srv.realestate.title">Gayrimenkul Hukuku</h3>
-          <p data-i18n="srv.realestate.desc">Tapu iptali, kat mülkiyeti, kira uyuşmazlıkları ve gayrimenkul işlemlerinde uzman rehberlik.</p>
-          <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
-        </article>
-
-        <article class="srv-card reveal-up" style="--d:0.25s">
-          <div class="srv-num" aria-hidden="true">05</div>
-          <div class="srv-icon"><i class="fas fa-people-arrows"></i></div>
-          <h3 data-i18n="srv.labor.title">İş Hukuku</h3>
-          <p data-i18n="srv.labor.desc">İşçi ve işveren hakları, haksız fesih, kıdem tazminatı ve iş kazalarında kapsamlı destek.</p>
-          <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
-        </article>
-
-        <article class="srv-card reveal-up" style="--d:0.3s">
-          <div class="srv-num" aria-hidden="true">06</div>
-          <div class="srv-icon"><i class="fas fa-gavel"></i></div>
-          <h3 data-i18n="srv.criminal.title">Ceza Hukuku</h3>
-          <p data-i18n="srv.criminal.desc">Soruşturma ve kovuşturma aşamalarında etkin savunma, müdahillik ve şikâyet süreçleri.</p>
-          <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       WHY US — açık zemin, dikey liste
-  ═══════════════════════════════════════════ -->
-  <section class="section why-us" id="why-us" style="display:none">
-    <div class="container">
-      <div class="why-layout">
-
-        <div class="why-left reveal-left">
-          <div class="label-row">
-            <span class="gold-dot"></span>
-            <span class="eyebrow" data-i18n="why.label">Neden Biz</span>
-          </div>
-          <h2 class="section-title" data-i18n="why.title">Farkımızı Yaratan<br>Değerlerimiz</h2>
-          <p class="why-intro" data-i18n="why.desc">
-            Her müvekkilimizle güvene dayalı, uzun soluklu bir ilişki kuruyoruz. Hukuki süreçlerin her aşamasında şeffaf, erişilebilir ve çözüm odaklı hareket ediyoruz.
-          </p>
-          <a href="#contact" class="btn btn-dark" data-i18n="why.cta">Ücretsiz Ön Görüşme</a>
-        </div>
-
-        <div class="why-right reveal-right">
-          <div class="why-list">
-
-            <div class="why-row">
-              <div class="why-num">01</div>
-              <div class="why-content">
-                <h4 data-i18n="why.f1.title">Derin Hukuki Deneyim</h4>
-                <p data-i18n="why.f1.text">15 yılı aşan kesintisiz pratik; çok sayıda hukuki alanda birikmiş derin uzmanlık.</p>
-              </div>
-            </div>
-
-            <div class="why-row">
-              <div class="why-num">02</div>
-              <div class="why-content">
-                <h4 data-i18n="why.f2.title">Şeffaf İletişim</h4>
-                <p data-i18n="why.f2.text">Davanızın her aşamasında bilgilendiririz; sorularınız asla yanıtsız kalmaz.</p>
-              </div>
-            </div>
-
-            <div class="why-row">
-              <div class="why-num">03</div>
-              <div class="why-content">
-                <h4 data-i18n="why.f3.title">Tam Gizlilik</h4>
-                <p data-i18n="why.f3.text">Müvekkil sırrı ve kişisel veri gizliliği, çalışma anlayışımızın değişmez ilkesidir.</p>
-              </div>
-            </div>
-
-            <div class="why-row">
-              <div class="why-num">04</div>
-              <div class="why-content">
-                <h4 data-i18n="why.f4.title">Stratejik Düşünce</h4>
-                <p data-i18n="why.f4.text">Her davayı özgün olarak ele alır, en etkin hukuki stratejiyi birlikte belirleriz.</p>
-              </div>
-            </div>
-
-            <div class="why-row">
-              <div class="why-num">05</div>
-              <div class="why-content">
-                <h4 data-i18n="why.f5.title">Erişilebilirlik</h4>
-                <p data-i18n="why.f5.text">Türkçe, İngilizce ve Almanca hizmet — her müvekkile kendi dilinde ulaşıyoruz.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       BLOG — koyu zemin
-  ═══════════════════════════════════════════ -->
-  <section class="section blog dark-section" id="blog" style="display:none">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <div class="label-row center">
-          <span class="gold-dot"></span>
-          <span class="eyebrow light" data-i18n="blog.label">Blog &amp; Makaleler</span>
-          <span class="gold-dot"></span>
-        </div>
-        <h2 class="section-title light" data-i18n="blog.title">Hukuki Perspektif</h2>
-        <div class="title-rule"></div>
-      </div>
-
-      <div class="blog-grid">
-
-        <article class="blog-card reveal-up" style="--d:0.05s">
-          <div class="blog-top">
-            <span class="blog-cat" data-i18n="blog.cat1">İdare Hukuku</span>
-            <time class="blog-date" datetime="2026-04-15" data-i18n="blog.date1">15 Nisan 2026</time>
-          </div>
-          <h3 data-i18n="blog.title1">İdari İptal Davalarında Dikkat Edilmesi Gereken Süreler</h3>
-          <p data-i18n="blog.exc1">İdare mahkemelerinde açılacak iptal davalarında hak düşürücü sürelerin hesaplanması ve pratik öneriler.</p>
-          <a href="#" class="blog-link" aria-label="Makaleyi oku">
-            <span data-i18n="blog.read">Devamını Oku</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </article>
-
-        <article class="blog-card reveal-up" style="--d:0.15s">
-          <div class="blog-top">
-            <span class="blog-cat" data-i18n="blog.cat2">Ticaret Hukuku</span>
-            <time class="blog-date" datetime="2026-03-28" data-i18n="blog.date2">28 Mart 2026</time>
-          </div>
-          <h3 data-i18n="blog.title2">Şirket Birleşmelerinde Hukuki Due Diligence Süreci</h3>
-          <p data-i18n="blog.exc2">Ticari birleşme ve devralma işlemlerinde hukuki durum tespitinin önemi ve izlenmesi gereken adımlar.</p>
-          <a href="#" class="blog-link" aria-label="Makaleyi oku">
-            <span data-i18n="blog.read">Devamını Oku</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </article>
-
-        <article class="blog-card reveal-up" style="--d:0.25s">
-          <div class="blog-top">
-            <span class="blog-cat" data-i18n="blog.cat3">İş Hukuku</span>
-            <time class="blog-date" datetime="2026-03-10" data-i18n="blog.date3">10 Mart 2026</time>
-          </div>
-          <h3 data-i18n="blog.title3">2026 Kıdem Tazminatı Reformu: Hukuki Değerlendirme</h3>
-          <p data-i18n="blog.exc3">Gündemdeki kıdem tazminatı düzenlemesinin işçi ve işveren üzerindeki olası etkileri ve kapsamlı hukuki analiz.</p>
-          <a href="#" class="blog-link" aria-label="Makaleyi oku">
-            <span data-i18n="blog.read">Devamını Oku</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </article>
-
-      </div>
-
-      <div class="blog-footer reveal-up">
-        <a href="#" class="btn btn-gold-outline" data-i18n="blog.all">Tüm Makaleleri Gör</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       CONTACT — açık zemin, temiz form
-  ═══════════════════════════════════════════ -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="contact-layout">
-
-        <!-- Sol: Bilgiler -->
-        <div class="contact-left reveal-left">
-          <div class="label-row">
-            <span class="gold-dot"></span>
-            <span class="eyebrow" data-i18n="contact.label">İletişim</span>
-          </div>
-          <h2 class="section-title" data-i18n="contact.title">Danışmak için<br>Bize Ulaşın</h2>
-          <p data-i18n="contact.desc">Hukuki sorularınız için ücretsiz ön görüşme talep edebilirsiniz. Size en kısa sürede dönüş yaparız.</p>
-
-          <div class="contact-details">
-            <div class="contact-item">
-              <i class="fas fa-location-dot" aria-hidden="true"></i>
-              <div>
-                <span class="contact-item-label" data-i18n="contact.address.label">Adres</span>
-                <span>Laleli Mah. 428. Sk. No:1/2<br>Buca / İzmir</span>
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone" aria-hidden="true"></i>
-              <div>
-                <span class="contact-item-label" data-i18n="contact.phone.label">Telefon</span>
-                <a href="tel:+902324388758">0232 438 87 58</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <div>
-                <span class="contact-item-label" data-i18n="contact.email.label">E-posta</span>
-                <a href="mailto:info@aktaskaraca.com">info@aktaskaraca.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <div>
-                <span class="contact-item-label" data-i18n="contact.hours.label">Çalışma Saatleri</span>
-                <span data-i18n="contact.hours">Pzt – Cuma: 09:00 – 18:00 · Cmt: 10:00 – 14:00</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="map-wrapper">
-            <iframe
-              src="https://maps.google.com/maps?q=38.3972962,27.1490779&z=17&output=embed"
-              width="100%" height="220" style="border:0; display:block;"
-              allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Aktaş & Karaca Hukuk Bürosu Konum">
-            </iframe>
-          </div>
-        </div>
-
-        <!-- Sağ: Form -->
-        <div class="contact-right reveal-right">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="c-name" data-i18n="form.name">Ad Soyad</label>
-                <input type="text" id="c-name" name="name" required
-                  placeholder="Adınız Soyadınız" data-i18n-placeholder="form.namePh" autocomplete="name" />
-              </div>
-              <div class="form-group">
-                <label for="c-email" data-i18n="form.email">E-posta</label>
-                <input type="email" id="c-email" name="email" required
-                  placeholder="ornek@email.com" autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="c-phone" data-i18n="form.phone">Telefon</label>
-                <input type="tel" id="c-phone" name="phone" autocomplete="tel"
-                  placeholder="+90 (___) ___ __ __" />
-              </div>
-              <div class="form-group">
-                <label for="c-subject" data-i18n="form.subject">Konu</label>
-                <select id="c-subject" name="subject" required>
-                  <option value="" data-i18n="form.subjectPh">Hizmet Seçin</option>
-                  <option value="idari"  data-i18n="srv.administrative.title">İdare Hukuku</option>
-                  <option value="ticari" data-i18n="srv.commercial.title">Ticaret Hukuku</option>
-                  <option value="aile"   data-i18n="srv.family.title">Aile Hukuku</option>
-                  <option value="emlak"  data-i18n="srv.realestate.title">Gayrimenkul Hukuku</option>
-                  <option value="is"     data-i18n="srv.labor.title">İş Hukuku</option>
-                  <option value="ceza"   data-i18n="srv.criminal.title">Ceza Hukuku</option>
-                  <option value="diger"  data-i18n="form.other">Diğer</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group full">
-              <label for="c-message" data-i18n="form.message">Mesajınız</label>
-              <textarea id="c-message" name="message" rows="5" required
-                placeholder="Hukuki durumunuzu kısaca açıklayın…" data-i18n-placeholder="form.messagePh"></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark btn-submit" id="submitBtn">
-              <span data-i18n="form.send">Gönder</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
-            <p class="form-privacy"><i class="fas fa-lock"></i> <span data-i18n="form.privacy">Bilgileriniz gizli tutulur.</span></p>
-            <div class="form-success" id="formSuccess" role="status">
-              <i class="fas fa-circle-check"></i>
-              <span data-i18n="form.success">Mesajınız iletildi. En kısa sürede dönüş yapacağız.</span>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-top">
-      <div class="container footer-top-inner">
-
-        <div class="footer-brand">
-          <a href="#hero" class="logo" aria-label="Aktaş & Karaca Ana Sayfa">
-            <span class="logo-emblem" aria-hidden="true"><i class="fas fa-scale-balanced"></i></span>
-            <div class="logo-wordmark">
-              <span class="logo-name">Aktaş &amp; Karaca</span>
-              <span class="logo-tagline" data-i18n="nav.subtitle">Hukuk Bürosu</span>
-            </div>
-          </a>
-          <p class="footer-desc" data-i18n="footer.desc">
-            Hukuki süreçlerinizde güvenilir, deneyimli ve sonuç odaklı hizmet.
-          </p>
-          <div class="social-row" aria-label="Sosyal medya">
-            <a href="#" aria-label="LinkedIn"   class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Twitter/X"  class="social-link"><i class="fab fa-x-twitter"></i></a>
-            <a href="#" aria-label="Instagram"  class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <nav class="footer-nav" aria-label="Footer navigasyon">
-          <h4 data-i18n="footer.quick">Hızlı Erişim</h4>
-          <ul role="list">
-            <li><a href="#hero"     data-i18n="nav.home">Anasayfa</a></li>
-            <li><a href="#about"    data-i18n="nav.about">Hakkımızda</a></li>
-            <li><a href="#services" data-i18n="nav.services">Hizmetler</a></li>
-            <li><a href="#blog"     data-i18n="nav.blog">Blog</a></li>
-            <li><a href="#contact"  data-i18n="nav.contact">İletişim</a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer-nav" aria-label="Hizmet alanları">
-          <h4 data-i18n="footer.services">Hizmetler</h4>
-          <ul role="list">
-            <li><a href="#services" data-i18n="srv.administrative.title">İdare Hukuku</a></li>
-            <li><a href="#services" data-i18n="srv.commercial.title">Ticaret Hukuku</a></li>
-            <li><a href="#services" data-i18n="srv.family.title">Aile Hukuku</a></li>
-            <li><a href="#services" data-i18n="srv.realestate.title">Gayrimenkul Hukuku</a></li>
-            <li><a href="#services" data-i18n="srv.labor.title">İş Hukuku</a></li>
-            <li><a href="#services" data-i18n="srv.criminal.title">Ceza Hukuku</a></li>
-          </ul>
-        </nav>
-
-        <address class="footer-contact">
-          <h4 data-i18n="footer.contact">İletişim</h4>
-          <p><i class="fas fa-location-dot"></i><span>Laleli Mah. 428. Sk. No:1/2 · Buca / İzmir</span></p>
-          <p><i class="fas fa-phone"></i><a href="tel:+902324388758">0232 438 87 58</a></p>
-          <p><i class="fas fa-envelope"></i><a href="mailto:info@aktaskaraca.com">info@aktaskaraca.com</a></p>
+  <main>
+    <!-- Kart -->
+    <section class="card-wrap" aria-label="Aktaş & Karaca Hukuk Bürosu">
+      <div class="card">
+        <p class="card-kicker" data-i18n="card.kicker">Avukatlık ve Hukuki Danışmanlık</p>
+        <h1 class="card-name">Aktaş &amp; Karaca</h1>
+        <p class="card-sub" data-i18n="brand.sub">Hukuk Bürosu</p>
+        <div class="flourish" aria-hidden="true"><span></span><i></i><span></span></div>
+        <address class="card-address">
+          Laleli Mah. 428. Sk. No:1/2 Buca / İzmir<br />
+          <span data-i18n="card.tel">Tel</span>: <a href="tel:+902324388758">0232 438 87 58</a><br />
+          <a href="mailto:info@aktaskaraca.com">info@aktaskaraca.com</a>
         </address>
+      </div>
+    </section>
+
+    <!-- Büro -->
+    <section class="block" id="buro">
+      <h2 class="label" data-i18n="nav.office">Büro</h2>
+      <p class="lead" data-i18n="office.p1">Aktaş &amp; Karaca Hukuk Bürosu, İzmir'de gerçek ve tüzel kişilere avukatlık ve hukuki danışmanlık hizmeti vermektedir.</p>
+      <p data-i18n="office.p2">Büro; dava ve icra takibi, sözleşme hazırlanması ve incelenmesi, hukuki görüş ve arabuluculuk süreçlerinde çalışmaktadır.</p>
+    </section>
+
+    <!-- Çalışma alanları -->
+    <section class="block" id="alanlar">
+      <h2 class="label" data-i18n="nav.areas">Çalışma Alanları</h2>
+      <ol class="areas">
+        <li><h3 data-i18n="a1.t">İdare Hukuku</h3><p data-i18n="a1.d">İptal ve tam yargı davaları, idari işlemlere itiraz.</p></li>
+        <li><h3 data-i18n="a2.t">Ticaret Hukuku</h3><p data-i18n="a2.d">Ticari sözleşmeler, ortaklık uyuşmazlıkları, alacak davaları.</p></li>
+        <li><h3 data-i18n="a3.t">Gayrimenkul Hukuku</h3><p data-i18n="a3.d">Tapu iptali ve tescil, kira, kat karşılığı inşaat, ortaklığın giderilmesi.</p></li>
+        <li><h3 data-i18n="a4.t">İş Hukuku</h3><p data-i18n="a4.d">İşçilik alacakları, fesih uyuşmazlıkları, işveren danışmanlığı.</p></li>
+        <li><h3 data-i18n="a5.t">Aile Hukuku</h3><p data-i18n="a5.d">Boşanma, velayet, nafaka, mal rejiminin tasfiyesi.</p></li>
+        <li><h3 data-i18n="a6.t">Ceza Hukuku</h3><p data-i18n="a6.d">Soruşturma ve kovuşturma aşamalarında müdafilik ve katılan vekilliği.</p></li>
+      </ol>
+    </section>
+
+    <!-- Avukatlar -->
+    <section class="block" id="avukatlar">
+      <h2 class="label" data-i18n="nav.lawyers">Avukatlar</h2>
+      <div class="lawyers">
+        <div class="lawyer">
+          <p class="lawyer-name">Av. Ahmet Çağrı Aktaş</p>
+          <p class="lawyer-title" data-i18n="l.lawyer">Avukat</p>
+        </div>
+        <div class="lawyer">
+          <p class="lawyer-name">Av. Arb. Ahmet Ceyhun Karaca</p>
+          <p class="lawyer-title" data-i18n="l.lawyerMed">Arabulucu &amp; Avukat</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- İletişim -->
+    <section class="block" id="iletisim">
+      <h2 class="label" data-i18n="nav.contact">İletişim</h2>
+      <div class="contact">
+        <div class="contact-info">
+          <dl>
+            <dt data-i18n="c.addr">Adres</dt><dd>Laleli Mah. 428. Sk. No:1/2<br />Buca / İzmir</dd>
+            <dt data-i18n="c.tel">Telefon</dt><dd><a href="tel:+902324388758">0232 438 87 58</a></dd>
+            <dt data-i18n="c.mail">E-posta</dt><dd><a href="mailto:info@aktaskaraca.com">info@aktaskaraca.com</a></dd>
+            <dt data-i18n="c.hours">Çalışma Saatleri</dt><dd data-i18n="c.hoursV">Pazartesi – Cuma, 09.00 – 18.00 · Cumartesi, 10.00 – 14.00</dd>
+          </dl>
+          <p class="maplink"><a href="https://www.google.com/maps/search/?api=1&amp;query=38.3972962,27.1490779" target="_blank" rel="noopener" data-i18n="c.map">Haritada göster</a></p>
+        </div>
 
       </div>
-    </div>
+    </section>
+  </main>
 
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; <span id="year"></span> Aktaş &amp; Karaca Hukuk Bürosu. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></p>
-        <p>
-          <a href="#" data-i18n="footer.privacy">Gizlilik Politikası</a>
-          <span aria-hidden="true"> · </span>
-          <a href="#" data-i18n="footer.terms">Kullanım Koşulları</a>
-        </p>
-      </div>
-    </div>
+  <footer class="colophon">
+    <div class="rule" aria-hidden="true"></div>
+    <p>Aktaş &amp; Karaca Hukuk Bürosu · Laleli Mah. 428. Sk. No:1/2 Buca / İzmir · 0232 438 87 58</p>
+    <p>© <span id="year">2026</span></p>
   </footer>
 
-  <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına dön">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
   <script src="script.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
