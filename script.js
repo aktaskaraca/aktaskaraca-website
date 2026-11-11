@@ -15,7 +15,7 @@ const T = {
     'a5.t':'Aile Hukuku','a5.d':'Boşanma, velayet, nafaka, mal rejiminin tasfiyesi.',
     'a6.t':'Ceza Hukuku','a6.d':'Soruşturma ve kovuşturma aşamalarında müdafilik ve katılan vekilliği.',
     'l.lawyer':'Avukat','l.lawyerMed':'Arabulucu & Avukat',
-    'c.addr':'Adres','c.tel':'Telefon','c.mail':'E-posta','c.map':'Haritada göster','c.hours':'Çalışma Saatleri','c.hoursV':'Pazartesi – Cuma, 09.00 – 18.00\nCumartesi, 10.00 – 14.00',
+    'c.addr':'Adres','c.tel':'Telefon','c.mobile':'Cep · Av. Ahmet Çağrı Aktaş','c.mail':'E-posta','c.map':'Haritada göster','c.hours':'Çalışma Saatleri','c.hoursV':'Pazartesi – Cuma, 09.00 – 18.00\nCumartesi, 10.00 – 14.00',
     'f.name':'Ad Soyad','f.email':'E-posta','f.phone':'Telefon','f.msg':'Mesajınız',
     'f.kvkkLink':'Aydınlatma Metni','f.kvkk':"'ni okudum.",'f.kvkkTitle':'KVKK Aydınlatma Metni',
     'f.send':'Gönder','f.ok':'Mesajınız iletildi. Büromuz sizinle iletişime geçecektir.','f.need':'Lütfen zorunlu alanları doldurunuz.'
@@ -33,7 +33,7 @@ const T = {
     'a5.t':'Family Law','a5.d':'Divorce, custody, alimony, liquidation of matrimonial property.',
     'a6.t':'Criminal Law','a6.d':'Defence and representation of complainants at investigation and trial stages.',
     'l.lawyer':'Attorney at Law','l.lawyerMed':'Mediator & Attorney at Law',
-    'c.addr':'Address','c.tel':'Telephone','c.mail':'E-mail','c.map':'Show on map','c.hours':'Office Hours','c.hoursV':'Monday – Friday, 09.00 – 18.00\nSaturday, 10.00 – 14.00',
+    'c.addr':'Address','c.tel':'Telephone','c.mobile':'Mobile · Av. Ahmet Çağrı Aktaş','c.mail':'E-mail','c.map':'Show on map','c.hours':'Office Hours','c.hoursV':'Monday – Friday, 09.00 – 18.00\nSaturday, 10.00 – 14.00',
     'f.name':'Full Name','f.email':'E-mail','f.phone':'Telephone','f.msg':'Your Message',
     'f.kvkkLink':'Privacy Notice','f.kvkk':' — I have read it.','f.kvkkTitle':'Privacy Notice (KVKK)',
     'f.send':'Send','f.ok':'Your message has been received. The office will contact you.','f.need':'Please complete the required fields.'
@@ -51,7 +51,7 @@ const T = {
     'a5.t':'Familienrecht','a5.d':'Scheidung, Sorgerecht, Unterhalt, Güterrechtsauseinandersetzung.',
     'a6.t':'Strafrecht','a6.d':'Verteidigung und Nebenklagevertretung im Ermittlungs- und Hauptverfahren.',
     'l.lawyer':'Rechtsanwalt','l.lawyerMed':'Mediator & Rechtsanwalt',
-    'c.addr':'Adresse','c.tel':'Telefon','c.mail':'E-Mail','c.map':'Auf der Karte zeigen','c.hours':'Bürozeiten','c.hoursV':'Montag – Freitag, 09.00 – 18.00\nSamstag, 10.00 – 14.00',
+    'c.addr':'Adresse','c.tel':'Telefon','c.mobile':'Mobil · Av. Ahmet Çağrı Aktaş','c.mail':'E-Mail','c.map':'Auf der Karte zeigen','c.hours':'Bürozeiten','c.hoursV':'Montag – Freitag, 09.00 – 18.00\nSamstag, 10.00 – 14.00',
     'f.name':'Name','f.email':'E-Mail','f.phone':'Telefon','f.msg':'Ihre Nachricht',
     'f.kvkkLink':'Datenschutzhinweis','f.kvkk':' — gelesen.','f.kvkkTitle':'Datenschutzhinweis (KVKK)',
     'f.send':'Senden','f.ok':'Ihre Nachricht ist eingegangen. Die Kanzlei wird sich bei Ihnen melden.','f.need':'Bitte füllen Sie die Pflichtfelder aus.'
